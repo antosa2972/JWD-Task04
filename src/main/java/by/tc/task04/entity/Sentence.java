@@ -10,7 +10,6 @@ public class Sentence
     {
         this.content = content;
     }
-
     @Override
     public String toString() {
         return "Sentence{" +
@@ -24,16 +23,13 @@ public class Sentence
         Sentence sentence = (Sentence) o;
         return Objects.equals(content, sentence.content);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(content);
     }
-
     public String getContent() {
         return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }

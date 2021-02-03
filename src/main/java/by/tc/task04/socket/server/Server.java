@@ -1,9 +1,8 @@
 package by.tc.task04.socket.server;
-import by.tc.task04.socket.server.controller.Controller;
 import by.tc.task04.entity.Text;
 import by.tc.task04.socket.GeneralSockConnection;
-import by.tc.task04.socket.server.parse.impl.FileParser;
-import by.tc.task04.socket.server.parse.impl.TextParser;
+import by.tc.task04.socket.server.parse.FileParser;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

@@ -1,16 +1,17 @@
 package by.tc.task04.socket.client;
 
+import by.tc.task04.socket.client.print.TextPrinter;
+
 public class ClientRunner {
     public static void main(String []args){
     Client client = new Client();
     int num;
     do {
         client.openConnection();
-        client.showMenu();
+        TextPrinter.printMenu();
         num = client.enterNumber();
         client.sendData(num);
         client.acceptData();
-        //client.closeConnection();
     }while(num!=0);
     client.closeConnection();
     }

@@ -2,7 +2,7 @@ package by.tc.task04.socket.server.text_operations.impl;
 
 import by.tc.task04.entity.Sentence;
 import by.tc.task04.entity.Text;
-import by.tc.task04.socket.server.parse.impl.TextParser;
+import by.tc.task04.socket.server.parse.TextParser;
 import by.tc.task04.socket.server.text_operations.MakeOperation;
 
 import java.util.ArrayList;
@@ -19,18 +19,14 @@ public class Operation6 implements MakeOperation {
         }
         ArrayList<String> wordsToSort = new ArrayList<String>();
         wordsToSort.addAll(allWordsFromText);
-
         Collections.sort(wordsToSort);
-
         StringBuilder content = new StringBuilder();
-        for(int i = 0; i < wordsToSort.size(); i++)
-        {
+        for(int i = 0; i < wordsToSort.size(); i++) {
             if( i != 0 && wordsToSort.get(i).charAt(0) != wordsToSort.get(i - 1).charAt(0))
                 content.append("\n\t");
 
             content.append(wordsToSort.get(i) + SPACE);
         }
-
         return new Text(content.toString());
     }
 }

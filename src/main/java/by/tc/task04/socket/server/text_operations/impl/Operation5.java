@@ -2,7 +2,7 @@ package by.tc.task04.socket.server.text_operations.impl;
 
 import by.tc.task04.entity.Sentence;
 import by.tc.task04.entity.Text;
-import by.tc.task04.socket.server.parse.impl.TextParser;
+import by.tc.task04.socket.server.parse.TextParser;
 import by.tc.task04.socket.server.text_operations.MakeOperation;
 
 import java.util.ArrayList;
@@ -13,13 +13,9 @@ public class Operation5 implements MakeOperation {
         TextParser textParser = new TextParser();
         ArrayList<Sentence> allSentencesFromText = textParser.parseTextToSentences(text);
         ArrayList<Sentence> result = new ArrayList<Sentence>();
-
-        for(Sentence sentence : allSentencesFromText)
-        {
+        for(Sentence sentence : allSentencesFromText) {
             ArrayList<String> wordsFromSentence = textParser.parseSentenceToWords(sentence);
-
-            if(wordsFromSentence.size() > 1)
-            {
+            if(wordsFromSentence.size() > 1) {
                 String firstWord = wordsFromSentence.get(FIRST);
                 String lastWord = wordsFromSentence.get(wordsFromSentence.size() - 1);
 
@@ -30,7 +26,6 @@ public class Operation5 implements MakeOperation {
             }
             result.add(textParser.getSentenceFromWords(wordsFromSentence));
         }
-
         return new Text(result);
     }
 }

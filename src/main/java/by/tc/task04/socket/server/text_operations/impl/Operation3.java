@@ -2,11 +2,10 @@ package by.tc.task04.socket.server.text_operations.impl;
 
 import by.tc.task04.entity.Sentence;
 import by.tc.task04.entity.Text;
-import by.tc.task04.socket.server.parse.impl.TextParser;
+import by.tc.task04.socket.server.parse.TextParser;
 import by.tc.task04.socket.server.text_operations.MakeOperation;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Operation3 implements MakeOperation {
     @Override
@@ -18,19 +17,15 @@ public class Operation3 implements MakeOperation {
             Sentence firstSentence = allSentencesFromText.get(FIRST);
             ArrayList<String> wordsFromFirstSentence = textParser.parseSentenceToWords(firstSentence);
             ArrayList<Sentence> sentencesExceptFirst = new ArrayList<Sentence>();
-
             for(int i = 1; i < allSentencesFromText.size(); i++)
                 sentencesExceptFirst.add(allSentencesFromText.get(i));
-
-            for(String word : wordsFromFirstSentence)
-            {
-                if(!sentencesExceptFirst.contains(word)) {
+            for(String word : wordsFromFirstSentence) {
+                if(!sentencesExceptFirst.toString().contains(word)) {
                     temp.append(word);
                     temp.append(" ");
                 }
             }
             uniqueWord=temp.toString();
             return new Text(uniqueWord);
-
     }
 }
